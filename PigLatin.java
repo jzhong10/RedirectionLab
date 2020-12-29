@@ -14,10 +14,13 @@ public class PigLatin {
 
   public static String pigLatinSimple(String str) {
     String[] vowels = new String[] {"a", "e", "i", "o", "u"};
+    String retstr = "";
     if (in(str.charAt(0), vowels)) {
-      return str + "hay";
+      retstr = str + "hay";
+    } else {
+      retstr = str.substring(1, str.length()) + str.charAt(0) + "ay";
     }
-    return str.substring(1, str.length()) + str.charAt(0) + "ay";
+    return retstr.toLowerCase();
   }
 
   public static boolean in(char ch, String[] arrstr) {
