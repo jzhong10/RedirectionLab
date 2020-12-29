@@ -14,8 +14,9 @@ public class PigLatin {
         System.out.println(pigLatinSimple(args[0]));
       }
 */
-      System.out.println(pigLatin(args[0]));
-      System.out.println(pigLatinBest(args[0]));
+      //System.out.println(pigLatin(args[0]));
+      //System.out.println(pigLatinBest(args[0]));
+      /*
       System.out.println(pigLatinBest("*emu"));
       System.out.println(pigLatinBest("4chan"));
       System.out.println(pigLatinBest("fish!"));
@@ -24,6 +25,7 @@ public class PigLatin {
       System.out.println(pigLatinBest("cat!"));
       System.out.println(pigLatinBest("amazing?"));
       System.out.println(pigLatinBest("apple%"));
+      */
   }
 
   public static String pigLatinBest(String str) {
