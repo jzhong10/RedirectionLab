@@ -15,6 +15,34 @@ public class PigLatin {
       }
 */
       System.out.println(pigLatin(args[0]));
+      System.out.println(pigLatinBest(args[0]));
+      System.out.println(pigLatinBest("*emu"));
+      System.out.println(pigLatinBest("4chan"));
+      System.out.println(pigLatinBest("fish!"));
+      System.out.println(pigLatinBest("fish"));
+      System.out.println(pigLatinBest("the."));
+      System.out.println(pigLatinBest("cat!"));
+      System.out.println(pigLatinBest("amazing?"));
+      System.out.println(pigLatinBest("apple%"));
+  }
+
+  public static String pigLatinBest(String str) {
+    String letters = "abcdefghijklmnopqrstuvwxyz";
+    String numbers = "1234567890";
+    //first character is not a letter
+    if (!in(str.charAt(0), letters)) {
+      return str;
+    }
+    String retstr = "";
+    char endChar = str.charAt(str.length()-1);
+
+    //if the endChar is a letter or number, do normal pigLatin
+    if (in(endChar, letters) || in(endChar, numbers)) {
+      retstr = pigLatin(str);
+    } else {
+      retstr = pigLatin(str.substring(0, str.length()-1)) + endChar;
+    }
+    return retstr.toLowerCase();
   }
 
   public static String pigLatin(String str) {
@@ -54,6 +82,15 @@ public class PigLatin {
   public static boolean in(String str, String[] arrstr) {
     for (int i = 0; i<arrstr.length; i++) {
       if (arrstr[i].equals(str.substring(0,2))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static boolean in(char ch, String str) {
+    for (int i = 0; i<str.length(); i++) {
+      if (str.charAt(i)==ch) {
         return true;
       }
     }
