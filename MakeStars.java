@@ -4,21 +4,29 @@ public class MakeStars {
       //use the standard input (terminal input)
       //as the string that you read from
       Scanner n = new Scanner(System.in);
-
+      
       while (n.hasNextLine()) {
         String str1 = n.nextLine();
         Scanner s = new Scanner(str1);
+        String retstr = "";
         while (s.hasNext()) {
           String str = s.next();
           int index = 0;
           while (index<str.length()) {
-            System.out.print("*");
+            //System.out.print("*");
+            retstr += "*";
             index++;
           }
-          System.out.print(" ");
+          if (s.hasNext()) {
+            //System.out.print(" ");
+            retstr += " ";
+          }    
         }
-        System.out.println();
+        //System.out.println();
+        retstr += "\n";
+        System.out.print(retstr);
       }
+      
       //use hasNextLine()/nextLine() to loop over
       //all of the data
 
