@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class PigLatin {
   public static void main(String[] args) {
     //use the standard input (terminal input)
@@ -15,23 +16,26 @@ public class PigLatin {
 */
     //System.out.println(pigLatin(args[0]));
     //System.out.println(pigLatinBest(args[0]));
-
     Scanner n = new Scanner(System.in);
     String retstr = "";
     while (n.hasNextLine()) {
       String line = n.nextLine();
       Scanner currentline = new Scanner(line);
+      retstr = "";
+
       while (currentline.hasNext()) {
         String pigLatined = pigLatinBest(currentline.next());
-        retstr += pigLatined;
-        if (currentline.hasNext()) {
-          retstr += " ";
-        }
+        retstr += pigLatined + " ";
       }
-
+      retstr = retstr.substring(0, retstr.length()-1);
       retstr += "\n";
+      System.out.print(retstr);
     }
+    
+    // /retstr = retstr.substring(0, retstr.length()-1);
+    
     //System.out.println(retstr);
+    
   }
 
   public static String pigLatinBest(String str) {
